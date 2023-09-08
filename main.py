@@ -22,8 +22,10 @@ def main():
         text = input("Please type in your text to encode with morse: ")
         encoded_text = ""
         for x in text:
-            encoded_text += morse_code_dict[x.upper()] + " "
-            
+            if x in morse_code_dict:
+                encoded_text += morse_code_dict[x.upper()] + " "
+            else:
+                print(f"{x} is not part of the universal morse code alphabeth.")        
 
         print(f"Your encoded message is:{encoded_text}")
 
